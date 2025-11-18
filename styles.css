@@ -10,6 +10,7 @@
     --Desaturated-Blue: hsl(238, 22%, 44%);
     
     --Bright-Blue: hsl(224, 93%, 58%);
+    --Bright-Blue-hover: hsl(224, 100%, 65%);
     --Moderate-Cyan: hsl(170, 45%, 43%);
     
     --Light-Grayish-Blue: hsl(240, 75%, 98%);
@@ -46,6 +47,11 @@ body {
     text-decoration: none;
     font-size: 0.8rem;
     color: inherit;
+    transition: all 0.1s ease-in;
+    
+        &:hover {
+            color: var(--Bright-Blue-hover);
+        }
 }
 
 .hero {
@@ -102,6 +108,11 @@ body {
     border-radius: 0.2rem; 
     cursor: pointer;
     box-shadow: 2px 2px 5px hsla(240, 22%, 44%, 0.425);
+    transition: all 0.3s ease-in;
+
+    &:hover {
+        background: var(--Bright-Blue-hover);
+    }
 }
 .main {
     padding-bottom: 3rem;
@@ -141,6 +152,11 @@ body {
         text-decoration: none;
         padding-bottom: 0.4rem;
         width: 8.5rem;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+            color: var(--Bright-Blue-hover);
+        }
     }
 }
 .main__quote {
@@ -207,7 +223,11 @@ body {
     a {
         color: var(--Light-Grayish-Blue);
         text-decoration: none;
-
+        transition: all 0.1s ease-in;
+    
+        &:hover {
+            color: var(--Bright-Blue-hover);
+        }
     }
 }
 .footer__section {
