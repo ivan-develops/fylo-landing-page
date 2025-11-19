@@ -239,9 +239,9 @@ body {
 .footer {
     background: var(--Very-Dark-Blue);
     color: var(--Light-Grayish-Blue);
-    /* padding: 3rem 1rem;  */
     
     .container {
+        padding: 3rem;
         display: grid;
         gap: 2rem;
     }
@@ -314,12 +314,15 @@ body {
         display: grid;
         gap: 1.5rem;
         text-align: left;
-
     }
     .hero__inputContainer {
         grid-template-columns: 1fr 1fr;
         align-content: center;
         align-items: center;
+
+        .hero__button {
+            justify-self: start;
+        }
     }
     .main {
         .container {
@@ -347,13 +350,16 @@ body {
         text-align: left;
     }
     .getAccess__inputs {
-
         align-items: center;
+
         .hero__email {
             align-self: flex-end;
         }
         .hero__button {
             justify-self: flex-start;
         }
+    }
+    .footer .container {
+        padding: 5rem;
     }
 }
