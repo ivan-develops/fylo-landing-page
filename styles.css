@@ -35,17 +35,17 @@ body {
     align-items: center;
 }
 .logo__img {
-    width: 5rem;
+    width: clamp(5rem, 12vw, 11rem); 
 }
 
 .nav {
     display: flex;
-    gap: 1.4rem;
+    gap: clamp(1.4rem, 2vw , 3rem);
 }
 .nav__link {
     font-family: Raleway, sans-serif;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 1.2vw , 1.3rem);
     color: inherit;
     transition: all 0.1s ease-in;
     
@@ -55,18 +55,21 @@ body {
 }
 
 .hero {
-    padding: 2.2rem;
+    display: grid;
+    padding-top: 2.2rem;
     display: grid;
 
     /*img curve bottom*/
     background: url(images/bg-curve-mobile.svg); 
     background-repeat: no-repeat;
     background-position: bottom; 
+    background-size: contain;
     padding-bottom: 9rem; 
+
 }
 .hero__img {
     order: 1;
-    margin: 2.4rem 0;
+    /* margin: 2.4rem 0; */
     
     img {
         width: 100%;
@@ -80,12 +83,16 @@ body {
 }
 .hero__title {
     font-family: Raleway, sans-serif;
-    font-size: 1.52rem;
+    font-size: clamp(1.52rem, 5vw, 2.5rem);
     line-height: 1.46;
 }
 .hero__paragraph {
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 1.4vw , 1.5rem);
     line-height: 1.5;
+}
+.hero__inputContainer {
+    display: grid;
+    gap: 1rem;
 }
 .hero__email {
     padding: 0.7rem 1.3rem;
@@ -117,6 +124,7 @@ body {
 .main {
     padding-bottom: 3rem;
     background: var(--Light-Grayish-Blue);
+    display: grid;
 }
 .main__img {
     
@@ -131,8 +139,9 @@ body {
 }
 .main__title {
     text-align: center;
-    font-size: 1rem; 
-    font-family: Raleway;
+    font-family: Raleway, sans-serif;
+    font-size: clamp(1.52rem, 5vw, 2.5rem);
+    line-height: 1.46;
 }
 .main__paragraph {
     font-size: 0.9rem;
@@ -245,4 +254,55 @@ body {
     display: flex;
     justify-content: center;
     gap: 1.5rem; 
+}
+
+@media screen and (min-width:600px) {
+    .hero {
+        /*img curve bottom*/
+        background: url(images/bg-curve-desktop.svg); 
+        background-repeat: no-repeat;
+        background-position: bottom; 
+        background-size: contain;
+        padding-bottom: 9rem; 
+
+    }
+}
+@media screen and (min-width:1000px) {
+    .header {
+        margin-top: 2rem;
+    }
+    .container {
+        width: 100%;
+        max-width: 1350px; 
+        margin: 0 auto;       /* centrado horizontal en pantallas más grandes */
+        padding: 1.5rem;      /* respiración interior */
+    }
+    .hero {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero__img {
+        order: 2;
+    }
+    .hero__content {
+        order: 1;
+        display: grid;
+        gap: 1.5rem;
+        text-align: left;
+    }
+    .hero__inputContainer {
+        grid-template-columns: 1fr 1fr;
+        align-content: center;
+        align-items: center;
+    }
+    .main {
+        grid-template-columns: 1fr 1fr;
+    }
+    .main__img {
+        order: 2;
+    }
+    .main__content {
+        order: 1;
+        text-align: left;
+
+    }
 }
